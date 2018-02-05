@@ -1,7 +1,7 @@
 Proton Core staging tree 1.0.1
 ===============================
 
-`master:` [![Build Status](https://travis-ci.org/protoncoin/proton.svg?branch=master)](https://travis-ci.org/protoncoin/proton) `v1.0.1.x:` [![Build Status](https://travis-ci.org/protoncoin/proton.svg?branch=v1.0.1.x)](https://travis-ci.org/protoncoin/proton/branches) `v1.0.1.x:` [![Build Status](https://travis-ci.org/protoncoin/proton.svg?branch=v1.0.1.x)](https://travis-ci.org/protoncoin/proton/branches)
+`master:` [![Build Status](https://travis-ci.org/protoncoin/protoncoin.svg?branch=master)](https://travis-ci.org/protoncoin/protoncoin) `v1.0.1.x:` [![Build Status](https://travis-ci.org/protoncoin/protoncoin.svg?branch=v1.0.1.x)](https://travis-ci.org/protoncoin/protoncoin/branches) `v1.0.1.x:` [![Build Status](https://travis-ci.org/protoncoin/protoncoin.svg?branch=v1.0.1.x)](https://travis-ci.org/protoncoin/protoncoin/branches)
 
 https://www.protoncoin.io
 
@@ -9,13 +9,10 @@ https://www.protoncoin.io
 What is Proton?
 ----------------
 
-Proton is an experimental new digital currency that enables anonymous, instant
-payments to anyone, anywhere in the world. Proton uses peer-to-peer technology
-to operate with no central authority: managing transactions and issuing money
-are carried out collectively by the network. Proton Core is the name of the open
-source software which enables the use of this currency.
+ProtonCoin is a fully decentralised cryptocurrency built on the premise of providing anonymity, speed, fair mining by being ASIC-resistant and reliability by the usage of Masternodes.
 
-For more information, as well as an immediately useable, binary version of
+
+For more information, as well as an immediately usable, binary version of
 the Proton Core software, see https://www.protoncoin.io.
 
 
