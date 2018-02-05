@@ -8,7 +8,7 @@ packages:
 - "faketime"
 reference_datetime: "2017-01-01 00:00:00"
 remotes:
-- "url": "https://github.com/protoncoin/proton-detached-sigs.git"
+- "url": "https://github.com/protoncoin/protoncoin-detached-sigs.git"
   "dir": "signature"
 files:
 - "proton-osx-unsigned.tar.gz"

@@ -7,7 +7,7 @@ Use the autogen script to prepare the build environment.
     make
 
 Precompiled binaries are available at github, see
-https://github.com/protoncoin/proton-binaries
+https://github.com/protoncoin/protoncoin-binaries
 
 Always verify the signatures and checksums.
 

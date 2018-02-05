@@ -25,8 +25,8 @@ Build-Depends: debhelper,
  python
 Standards-Version: 3.9.2
 Homepage: https://www.protoncoin.info/
-Vcs-Git: git://github.com/protoncoin/proton.git
-Vcs-Browser: https://github.com/protoncoin/proton
+Vcs-Git: git://github.com/protoncoin/protoncoin.git
+Vcs-Browser: https://github.com/protoncoin/protoncoin
 
 Package: protond
 Architecture: any
