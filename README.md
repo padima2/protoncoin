@@ -1,7 +1,7 @@
-Proton Core staging tree 1.0.1
+Proton Core 1.0.1
 ===============================
 
-`master:` [![Build Status](https://travis-ci.org/protoncoin/protoncoin.svg?branch=master)](https://travis-ci.org/protoncoin/protoncoin) `v1.0.1.x:` [![Build Status](https://travis-ci.org/protoncoin/protoncoin.svg?branch=v1.0.1.x)](https://travis-ci.org/protoncoin/protoncoin/branches) `v1.0.1.x:` [![Build Status](https://travis-ci.org/protoncoin/protoncoin.svg?branch=v1.0.1.x)](https://travis-ci.org/protoncoin/protoncoin/branches)
+`master:` [![Build Status](https://travis-ci.org/protoncoin/protoncoin.svg?branch=master)](https://travis-ci.org/protoncoin/protoncoin)
 
 https://www.protoncoin.io
 

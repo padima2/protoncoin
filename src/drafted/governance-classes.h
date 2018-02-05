@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2017 The Proton Core developers
+// Copyright (c) 2014-2018 The Proton Core developers
 
 /*
  * FIELDS AND CLASSIFICATION
