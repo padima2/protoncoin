@@ -31,7 +31,7 @@ env:
 # Win32
     - HOST=i686-w64-mingw32 PLATFORM="win32" DPKG_ADD_ARCH="i386" DEP_OPTS="" PPA="ppa:bitcoin/bitcoin" PACKAGES="python3 nsis g++-mingw-w64-i686 wine1.7 bc" RUN_TESTS=false GOAL="install" BITCOIN_CONFIG="--enable-gui --enable-reduce-exports" MAKEJOBS="-j4" WINE=true
 # 32-bit + proton
-    - HOST=i686-pc-linux-gnu PLATFORM="pc-linux" PPA="ppa:bitcoin/bitcoin" PACKAGES="g++-multilib bc python3-zmq" DEP_OPTS="" RUN_TESTS=false GOAL="install" BITCOIN_CONFIG="--enable-zmq --enable-glibc-back-compat --enable-reduce-exports LDFLAGS=-static-libstdc++" USE_SHELL="/bin/dash" PYZMQ=true
+    - HOST=i686-pc-linux-gnu PLATFORM="linux" PPA="ppa:bitcoin/bitcoin" PACKAGES="g++-multilib bc python3-zmq" DEP_OPTS="" RUN_TESTS=false GOAL="install" BITCOIN_CONFIG="--enable-zmq --enable-glibc-back-compat --enable-reduce-exports LDFLAGS=-static-libstdc++" USE_SHELL="/bin/dash" PYZMQ=true
 # Win64
     - HOST=x86_64-w64-mingw32 PLATFORM="win64" DPKG_ADD_ARCH="i386" DEP_OPTS="" PPA="ppa:bitcoin/bitcoin" PACKAGES="python3 nsis g++-mingw-w64-x86-64 wine1.7 bc" RUN_TESTS=false GOAL="install" BITCOIN_CONFIG="--enable-gui --enable-reduce-exports" MAKEJOBS="-j4" WINE=true
 # protond
@@ -78,7 +78,7 @@ script:
 after_script:
     - if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then (echo "Upload goes here. Something like: scp -r $BASE_OUTDIR server" || echo "upload failed"); fi
 before_deploy:
-    - if [[ "$PLATFORM" = *"linux"* ]]; then tar -cvzf $OUTDIR/bin/protoncoin-$PLATFORM-$TRAVIS_TAG.tar.gz -C "$OUTDIR/bin" $OUTDIR/bin/proton*; fi
+    - if [[ "$PLATFORM" = *"linux"* ]]; then cd $OUTDIR/bin && tar -cvzf $OUTDIR/bin/protoncoin-$PLATFORM-$TRAVIS_TAG.tar.gz proton*; fi
     - if [[ "$PLATFORM" = *"win"* ]]; then zip -j $OUTDIR/bin/protoncoin-$PLATFORM-$TRAVIS_TAG.zip $OUTDIR/bin/proton*; fi
     - if [[ "$PLATFORM" = *"osx"* ]]; then mkdir -p $OUTDIR/bin && cp Proton-Core.dmg $OUTDIR/bin/protoncoin-$PLATFORM-$TRAVIS_TAG.dmg; fi
 deploy:
