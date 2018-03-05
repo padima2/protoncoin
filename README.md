@@ -1,9 +1,9 @@
-Proton Core 1.0.1
+Proton Core 1.0.2
 ===============================
 
 `master:` [![Build Status](https://travis-ci.org/protoncoin/protoncoin.svg?branch=master)](https://travis-ci.org/protoncoin/protoncoin)
 
-https://www.protoncoin.io
+https://protoncoin.io
 
 
 What is Proton?
@@ -13,7 +13,7 @@ ProtonCoin is a fully decentralised cryptocurrency built on the premise of provi
 
 
 For more information, as well as an immediately usable, binary version of
-the Proton Core software, see https://www.protoncoin.io.
+the Proton Core software, see https://protoncoin.io.
 
 
 License

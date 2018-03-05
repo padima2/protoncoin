@@ -1,7 +1,7 @@
 Proton Core 1.0.0
 =====================
 
-This is the official reference wallet for Proton digital currency and comprises the backbone of the Proton peer-to-peer network. You can [download Proton Core](https://www.protoncoin.info/downloads/) or [build it yourself](#building) using the guides below.
+This is the official reference wallet for Proton digital currency and comprises the backbone of the Proton peer-to-peer network. You can [download Proton Core](https://protoncoin.io) or [build it yourself](#building) using the guides below.
 
 Running
 ---------------------
