@@ -1,5 +1,6 @@
 // Copyright (c) 2011-2015 The Bitcoin Core developers
-// Copyright (c) 2014-2018 The Proton Core developers
+// Copyright (c) 2014-2017 The Dash Core developers
+// Copyright (c) 2017-2018 The Proton Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -48,7 +49,7 @@ static const int MAX_URI_LENGTH = 255;
 #define SPINNER_FRAMES 36
 
 #define QAPP_ORG_NAME "Proton"
-#define QAPP_ORG_DOMAIN "protoncoin.info"
+#define QAPP_ORG_DOMAIN "protoncoin.io"
 #define QAPP_APP_NAME_DEFAULT "Proton-Qt"
 #define QAPP_APP_NAME_TESTNET "Proton-Qt-testnet"
 

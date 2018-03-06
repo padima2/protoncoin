@@ -84,7 +84,7 @@ public:
         consensus.BIP34Height = 227931; // FIX
         consensus.BIP34Hash = uint256S("0x000000000000024b89b42a942fe0d9fea3bb44ab7bd1b19115dd6a759c0808b8"); // FIX
         consensus.powLimit = uint256S("00000fffff000000000000000000000000000000000000000000000000000000");
-        consensus.nPowTargetTimespan = 30 * 2 * 60; // Proton: 1 hour, 30 blocks
+        consensus.nPowTargetTimespan = 2 * 2 * 60; // Proton: 1 hour, 2 blocks
         consensus.nPowTargetSpacing = 2 * 60; // Proton: 2 minutes
         consensus.fPowAllowMinDifficultyBlocks = false;
         consensus.fPowNoRetargeting = false;
@@ -122,6 +122,7 @@ public:
         vSeeds.push_back(CDNSSeedData("protoncoin1", "seed1.protoncoin.info"));
         vSeeds.push_back(CDNSSeedData("protoncoin2", "seed2.protoncoin.info"));
         vSeeds.push_back(CDNSSeedData("protoncoin3", "seed3.protoncoin.info"));
+		vSeeds.push_back(CDNSSeedData("protoncoin4", "seed4.protoncoin.info"));
 		
         // Proton addresses start with 'P'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,55);
@@ -152,11 +153,12 @@ public:
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
             (    0, uint256S("0x00000e1728b630fd83aecbc51546c7915fffb7d3c897b5fd8c4b14043070b7f0"))
-			( 1000, uint256S("0x00000040520462647ef6997ab360d95af29e5288d8bc393643357f8ff433c366")),
-            1520071723, // * UNIX timestamp of last checkpoint block
-            1001,		// * total number of transactions between genesis and last checkpoint
+			( 1000, uint256S("0x00000040520462647ef6997ab360d95af29e5288d8bc393643357f8ff433c366"))
+			( 1900, uint256S("0x000000000071b6d0803cd72115d51445bc1703ed5b4cfcd18e6c7bc3fa72c167")),
+            1520342319, // * UNIX timestamp of last checkpoint block
+            1901,		// * total number of transactions between genesis and last checkpoint
                         //   (the tx=... number in the SetBestChain debug.log lines)
-            2800		// * estimated number of transactions per day after checkpoint
+            720			// * estimated number of transactions per day after checkpoint
         };
     }
 };
