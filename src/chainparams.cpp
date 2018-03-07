@@ -99,6 +99,11 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nStartTime = 1502280000; // Aug 9th, 2017
         consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nTimeout = 1533816000; // Aug 9th, 2018
 
+		// The best chain should have at least this much work.
+        consensus.nMinimumChainWork = uint256S("0x00000000000000000000000000000000000000000000000000010d96c32fd677"); //1938
+        // By default assume that the signatures in ancestors of this block are valid.
+        consensus.defaultAssumeValid = uint256S("0x0000000009cc1f28c974798e6222442be48a61a8f23a1497d4cdada1c38a76c4"); //1938
+
         /**
          * The message start string is designed to be unlikely to occur in normal data.
          * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
@@ -154,9 +159,10 @@ public:
             boost::assign::map_list_of
             (    0, uint256S("0x00000e1728b630fd83aecbc51546c7915fffb7d3c897b5fd8c4b14043070b7f0"))
 			( 1000, uint256S("0x00000040520462647ef6997ab360d95af29e5288d8bc393643357f8ff433c366"))
-			( 1900, uint256S("0x000000000071b6d0803cd72115d51445bc1703ed5b4cfcd18e6c7bc3fa72c167")),
-            1520342319, // * UNIX timestamp of last checkpoint block
-            1901,		// * total number of transactions between genesis and last checkpoint
+			( 1900, uint256S("0x000000000071b6d0803cd72115d51445bc1703ed5b4cfcd18e6c7bc3fa72c167"))
+			( 1938, uint256S("0x0000000009cc1f28c974798e6222442be48a61a8f23a1497d4cdada1c38a76c4")),
+            1520377574, // * UNIX timestamp of last checkpoint block
+            1939,		// * total number of transactions between genesis and last checkpoint
                         //   (the tx=... number in the SetBestChain debug.log lines)
             720			// * estimated number of transactions per day after checkpoint
         };
