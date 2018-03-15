@@ -1,4 +1,4 @@
-Proton Core version 1.0.5 is now available from:
+Proton Core version 1.0.6 is now available from:
 
   <https://protoncoin.io>
 

@@ -1,4 +1,4 @@
-Proton Core 1.0.5
+Proton Core 1.0.6
 ===============================
 
 `master:` [![Build Status](https://travis-ci.org/protoncoin/protoncoin.svg?branch=master)](https://travis-ci.org/protoncoin/protoncoin)
