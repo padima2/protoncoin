@@ -128,6 +128,7 @@ public:
         vSeeds.push_back(CDNSSeedData("protoncoin2", "seed2.protoncoin.info"));
         vSeeds.push_back(CDNSSeedData("protoncoin3", "seed3.protoncoin.info"));
         vSeeds.push_back(CDNSSeedData("protoncoin4", "seed4.protoncoin.info"));
+        vSeeds.push_back(CDNSSeedData("dnsseed", "dnsseed.protoncoin.info"));
 
         // Proton addresses start with 'P'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,55);
@@ -161,10 +162,11 @@ public:
             ( 1000, uint256S("0x00000040520462647ef6997ab360d95af29e5288d8bc393643357f8ff433c366"))
             ( 1900, uint256S("0x000000000071b6d0803cd72115d51445bc1703ed5b4cfcd18e6c7bc3fa72c167"))
             ( 1938, uint256S("0x0000000009cc1f28c974798e6222442be48a61a8f23a1497d4cdada1c38a76c4"))
-			( 2261, uint256S("0x00000000016d36f27c5a082407e5fbbf27760f769202165fc9ca2303db8f8da3"))
-            ( 2500, uint256S("0x000000001d9c136b34055b16c604e81cc516cedcf0d6e02358178c1096f71271")),
-            1520593765, // * UNIX timestamp of last checkpoint block
-            2501,       // * total number of transactions between genesis and last checkpoint
+            ( 2261, uint256S("0x00000000016d36f27c5a082407e5fbbf27760f769202165fc9ca2303db8f8da3"))
+            ( 2500, uint256S("0x000000001d9c136b34055b16c604e81cc516cedcf0d6e02358178c1096f71271"))
+            ( 8800, uint256S("0x0000000002241f4c3a10353ec625b642490dfff01734fcebbdeb733778e58635")),
+            1521392251, // * UNIX timestamp of last checkpoint block
+            10020,      // * total number of transactions between genesis and last checkpoint
                         //   (the tx=... number in the SetBestChain debug.log lines)
             2800        // * estimated number of transactions per day after checkpoint
         };
