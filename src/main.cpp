@@ -1747,11 +1747,15 @@ CAmount GetBlockSubsidy(int nPrevBits, int nPrevHeight, const Consensus::Params&
         return 1000000 * COIN;
     }
 
-    CAmount nSubsidy = 25 * COIN;
+    if (nPrevHeight < APRIL2018_REWARDS_BLOCK_CHANGE) {// 2018/04/02 @ approx. 13:00 (UTC)
+        return 25 * COIN;
+    }
+
+    CAmount nSubsidy = 50 * COIN;
 
     // yearly decline of production by 10% per year.
     for (int i = consensusParams.nSubsidyHalvingInterval; i <= nPrevHeight; i += consensusParams.nSubsidyHalvingInterval) {
-        nSubsidy -= nSubsidy*0.12;
+        nSubsidy -= nSubsidy * 0.12;
     }
 
     return fSuperblockPartOnly ? 0 : nSubsidy;
@@ -1759,7 +1763,11 @@ CAmount GetBlockSubsidy(int nPrevBits, int nPrevHeight, const Consensus::Params&
 
 CAmount GetMasternodePayment(int nHeight, CAmount blockValue)
 {
-    return blockValue*0.6;
+    if (nHeight < APRIL2018_REWARDS_BLOCK_CHANGE) {// 2018/04/02 @ approx. 13:00 (UTC)
+        return blockValue * 0.6;
+    }
+
+    return blockValue * 0.85;
 }
 
 bool IsInitialBlockDownload()

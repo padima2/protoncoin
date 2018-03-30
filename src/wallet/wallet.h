@@ -96,9 +96,9 @@ enum AvailableCoinsType
 {
     ALL_COINS = 1,
     ONLY_DENOMINATED = 2,
-    ONLY_NOT1000IFMN = 3,
-    ONLY_NONDENOMINATED_NOT1000IFMN = 4,
-    ONLY_1000 = 5, // find masternode outputs including locked ones (use with caution)
+    ONLY_NOT5000IFMN = 3,
+    ONLY_NONDENOMINATED_NOT5000IFMN = 4,
+    ONLY_5000 = 5, // find masternode outputs including locked ones (use with caution)
     ONLY_PRIVATESEND_COLLATERAL = 6
 };
 
@@ -654,7 +654,7 @@ public:
     bool SelectCoinsDark(CAmount nValueMin, CAmount nValueMax, std::vector<CTxIn>& vecTxInRet, CAmount& nValueRet, int nPrivateSendRoundsMin, int nPrivateSendRoundsMax) const;
     bool SelectCoinsGrouppedByAddresses(std::vector<CompactTallyItem>& vecTallyRet, bool fSkipDenominated = true, bool fAnonymizable = true) const;
 
-    /// Get 1000PROTON output and keys which can be used for the Masternode
+    /// Get 5000 PROTON output and keys which can be used for the Masternode
     bool GetMasternodeVinAndKeys(CTxIn& txinRet, CPubKey& pubKeyRet, CKey& keyRet, std::string strTxHash = "", std::string strOutputIndex = "");
     /// Extract txin information and keys from output
     bool GetVinAndKeysFromOutput(COutput out, CTxIn& txinRet, CPubKey& pubKeyRet, CKey& keyRet);

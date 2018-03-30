@@ -217,9 +217,9 @@ QT_TRANSLATE_NOOP("proton-core", ""
 "Unable to locate enough PrivateSend denominated funds for this transaction."),
 QT_TRANSLATE_NOOP("proton-core", ""
 "Unable to locate enough PrivateSend non-denominated funds for this "
-"transaction that are not equal 1000 PROTON."),
+"transaction that are not equal 5000 PROTON."),
 QT_TRANSLATE_NOOP("proton-core", ""
-"Unable to locate enough funds for this transaction that are not equal 1000 "
+"Unable to locate enough funds for this transaction that are not equal 5000 "
 "PROTON."),
 QT_TRANSLATE_NOOP("proton-core", ""
 "Unsupported argument -socks found. Setting SOCKS version isn't possible "

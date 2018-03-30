@@ -279,6 +279,10 @@ libbitcoin_wallet_a_SOURCES = \
 crypto_libbitcoin_crypto_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_CONFIG_INCLUDES) $(PIC_FLAGS)
 crypto_libbitcoin_crypto_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS) $(PIC_FLAGS)
 crypto_libbitcoin_crypto_a_SOURCES = \
+  crypto/aes.cpp \
+  crypto/aes.h \
+  crypto/chacha20.h \
+  crypto/chacha20.cpp \
   crypto/common.h \
   crypto/hmac_sha256.cpp \
   crypto/hmac_sha256.h \
@@ -299,6 +303,13 @@ crypto_libbitcoin_crypto_a_SOURCES = \
   crypto/skein.c \
   crypto/neoscrypt.c \
   crypto/neoscrypt.h \
+  crypto/sph_hamsi.c \
+  crypto/sph_hamsi_helper.c \
+  crypto/sph_fugue.c \
+  crypto/sph_shabal.c \
+  crypto/sph_whirlpool.c \
+  crypto/sph_sha2.c \
+  crypto/sph_sha512.c \
   crypto/ripemd160.h \
   crypto/sha1.cpp \
   crypto/sha1.h \
@@ -316,6 +327,11 @@ crypto_libbitcoin_crypto_a_SOURCES = \
   crypto/sph_shavite.h \
   crypto/sph_simd.h \
   crypto/sph_skein.h \
+  crypto/sph_hamsi.h \
+  crypto/sph_fugue. h \
+  crypto/sph_shabal.h \
+  crypto/sph_whirlpool.h \
+  crypto/sph_sha2.h \
   crypto/sph_types.h \
   crypto/sha512.cpp \
   crypto/sha512.h

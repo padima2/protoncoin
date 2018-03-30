@@ -1,5 +1,6 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2015 The Bitcoin Core developers
+// Copyright (c) 2017-2018 The Proton Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -15,9 +16,12 @@ uint256 CBlockHeader::GetHash() const
 {
         uint256 thash;
         unsigned int profile = 0x0;
-        neoscrypt((unsigned char *) &nVersion, (unsigned char *) &thash, profile);
-        return thash;
-
+		if(nTime <= 1522584000){ // 2018/04/01 @ 12:00 (UTC)
+        	neoscrypt((unsigned char *) &nVersion, (unsigned char *) &thash, profile);
+        } else {
+			thash = HashX16R(BEGIN(nVersion), END(nNonce), hashPrevBlock);
+		}
+		return thash;
 }
 
 std::string CBlock::ToString() const

@@ -129,6 +129,8 @@ static const bool DEFAULT_ENABLE_REPLACEMENT = false;
 /** Maximum number of headers to announce when relaying blocks with headers message.*/
 static const unsigned int MAX_BLOCKS_TO_ANNOUNCE = 8;
 
+static const int APRIL2018_REWARDS_BLOCK_CHANGE = 18950; // 2018/04/02 @ approx. 13:00 (UTC)
+
 struct BlockHasher
 {
     size_t operator()(const uint256& hash) const { return hash.GetCheapHash(); }
