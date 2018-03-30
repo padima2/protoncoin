@@ -1747,7 +1747,7 @@ CAmount GetBlockSubsidy(int nPrevBits, int nPrevHeight, const Consensus::Params&
         return 1000000 * COIN;
     }
 
-    if (nPrevHeight < APRIL2018_REWARDS_BLOCK_CHANGE) {// 2018/04/02 @ approx. 13:00 (UTC)
+    if (nPrevHeight + 1 < APRIL2018_REWARDS_BLOCK_CHANGE) {// 2018/04/02 @ approx. 13:00 (UTC)
         return 25 * COIN;
     }
 
