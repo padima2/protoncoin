@@ -1,9 +1,9 @@
 // Copyright (c) 2014 The Bitcoin Core developers
+// Copyright (c) 2017-2018 The Proton Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include "crypto/sha256.h"
-
 #include "crypto/common.h"
 
 #include <assert.h>
@@ -149,19 +149,6 @@ typedef void (*TransformType)(uint32_t*, const unsigned char*, size_t);
 TransformType Transform = sha256::Transform;
 
 } // namespace
-
-std::string SHA256AutoDetect()
-{
-#if defined(USE_ASM) && (defined(__x86_64__) || defined(__amd64__))
-    uint32_t eax, ebx, ecx, edx;
-    if (__get_cpuid(1, &eax, &ebx, &ecx, &edx) && (ecx >> 19) & 1) {
-        Transform = sha256_sse4::Transform;
-        return "sse4";
-    }
-#endif
-
-    return "standard";
-}
 
 ////// SHA-256
 
