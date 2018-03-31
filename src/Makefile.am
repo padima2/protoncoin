@@ -323,6 +323,7 @@ crypto_libbitcoin_crypto_a_SOURCES = \
   crypto/sph_hamsi.c \
   crypto/sph_hamsi_helper.c \
   crypto/sph_fugue.c \
+  crypto/sph_fugue.h \
   crypto/sph_shabal.c \
   crypto/sph_whirlpool.c \
   crypto/sph_sha2.c \
