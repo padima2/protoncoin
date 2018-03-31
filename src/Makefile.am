@@ -12,7 +12,6 @@ BITCOIN_INCLUDES += -I$(srcdir)/secp256k1/include
 BITCOIN_INCLUDES += -I$(srcdir)/univalue/include
 
 LIBBITCOIN_SERVER=libbitcoin_server.a
-LIBBITCOIN_WALLET=libbitcoin_wallet.a
 LIBBITCOIN_COMMON=libbitcoin_common.a
 LIBBITCOIN_CLI=libbitcoin_cli.a
 LIBBITCOIN_UTIL=libbitcoin_util.a
@@ -21,10 +20,15 @@ LIBBITCOINQT=qt/libbitcoinqt.a
 LIBSECP256K1=secp256k1/libsecp256k1.la
 
 if ENABLE_ZMQ
-LIBBITCOIN_ZMQ=libbitcoin_zmq.a
+  LIBBITCOIN_ZMQ=libbitcoin_zmq.a
 endif
 if BUILD_BITCOIN_LIBS
-LIBBITCOINCONSENSUS=libbitcoinconsensus.la
+  lib_LTLIBRARIES=libbitcoinconsensus.la
+  LIBBITCOINCONSENSUS=libbitcoinconsensus.la
+  LIBBITCOIN_CONSENSUS=libbitcoinconsensus.la
+else
+  LIBBITCOIN_CONSENSUS=
+endif
 endif
 if ENABLE_WALLET
 LIBBITCOIN_WALLET=libbitcoin_wallet.a
@@ -48,12 +52,7 @@ EXTRA_LIBRARIES += \
   $(LIBBITCOIN_WALLET) \
   $(LIBBITCOIN_ZMQ)
 
-if BUILD_BITCOIN_LIBS
-  lib_LTLIBRARIES = libbitcoinconsensus.la
-  LIBBITCOIN_CONSENSUS=libbitcoinconsensus.la
-else
-  LIBBITCOIN_CONSENSUS=
-endif
+
 
 bin_PROGRAMS =
 TESTS =
