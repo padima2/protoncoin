@@ -310,6 +310,7 @@ crypto_libbitcoin_crypto_a_SOURCES = \
   crypto/sph_sha2.c \
   crypto/sph_sha512.c \
   crypto/ctaes/ctaes.c \
+  crypto/md_helper.c \
   crypto/neoscrypt.h \
   crypto/ripemd160.h \
   crypto/sha1.cpp \
