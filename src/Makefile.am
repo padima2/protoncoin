@@ -6,33 +6,20 @@ AM_CPPFLAGS = $(HARDENED_CPPFLAGS)
 EXTRA_LIBRARIES =
 
 BITCOIN_CONFIG_INCLUDES=-I$(builddir)/config
-BITCOIN_INCLUDES=-I$(builddir) -I$(builddir)/obj $(BDB_CPPFLAGS) $(BOOST_CPPFLAGS) $(LEVELDB_CPPFLAGS) $(CRYPTO_CFLAGS) $(SSL_CFLAGS)
+BITCOIN_INCLUDES=-I$(builddir) -I$(builddir)/obj $(BOOST_CPPFLAGS) $(LEVELDB_CPPFLAGS) $(CRYPTO_CFLAGS) $(SSL_CFLAGS)
 
 BITCOIN_INCLUDES += -I$(srcdir)/secp256k1/include
 BITCOIN_INCLUDES += -I$(srcdir)/univalue/include
 
 LIBBITCOIN_SERVER=libbitcoin_server.a
+LIBBITCOIN_WALLET=libbitcoin_wallet.a
 LIBBITCOIN_COMMON=libbitcoin_common.a
 LIBBITCOIN_CLI=libbitcoin_cli.a
 LIBBITCOIN_UTIL=libbitcoin_util.a
 LIBBITCOIN_CRYPTO=crypto/libbitcoin_crypto.a
 LIBBITCOINQT=qt/libbitcoinqt.a
 LIBSECP256K1=secp256k1/libsecp256k1.la
-
-if ENABLE_ZMQ
-  LIBBITCOIN_ZMQ=libbitcoin_zmq.a
-endif
-if BUILD_BITCOIN_LIBS
-  lib_LTLIBRARIES=libbitcoinconsensus.la
-  LIBBITCOINCONSENSUS=libbitcoinconsensus.la
-  LIBBITCOIN_CONSENSUS=libbitcoinconsensus.la
-else
-  LIBBITCOIN_CONSENSUS=
-endif
-endif
-if ENABLE_WALLET
-LIBBITCOIN_WALLET=libbitcoin_wallet.a
-endif
+LIBUNIVALUE=univalue/libunivalue.la
 
 $(LIBSECP256K1): $(wildcard secp256k1/src/*) $(wildcard secp256k1/include/*)
 	$(AM_V_at)$(MAKE) $(AM_MAKEFLAGS) -C $(@D) $(@F)
@@ -46,13 +33,22 @@ EXTRA_LIBRARIES += \
   $(LIBBITCOIN_CRYPTO) \
   $(LIBBITCOIN_UTIL) \
   $(LIBBITCOIN_COMMON) \
-  $(LIBBITCOIN_CONSENSUS) \
   $(LIBBITCOIN_SERVER) \
-  $(LIBBITCOIN_CLI) \
-  $(LIBBITCOIN_WALLET) \
-  $(LIBBITCOIN_ZMQ)
+  $(LIBBITCOIN_CLI)
+if ENABLE_WALLET
+  BITCOIN_INCLUDES += $(BDB_CPPFLAGS)
+  EXTRA_LIBRARIES += libbitcoin_wallet.a
+endif
+if ENABLE_ZMQ
+  EXTRA_LIBRARIES += libbitcoin_zmq.a
+endif
 
-
+if BUILD_BITCOIN_LIBS
+  lib_LTLIBRARIES = libbitcoinconsensus.la
+  LIBBITCOIN_CONSENSUS=libbitcoinconsensus.la
+else
+  LIBBITCOIN_CONSENSUS=
+endif
 
 bin_PROGRAMS =
 TESTS =
