@@ -309,6 +309,7 @@ crypto_libbitcoin_crypto_a_SOURCES = \
   crypto/sph_whirlpool.c \
   crypto/sph_sha2.c \
   crypto/sph_sha512.c \
+  crypto/ctaes/ctaes.c \
   crypto/neoscrypt.h \
   crypto/ripemd160.h \
   crypto/sha1.cpp \
@@ -333,6 +334,7 @@ crypto_libbitcoin_crypto_a_SOURCES = \
   crypto/sph_whirlpool.h \
   crypto/sph_sha2.h \
   crypto/sph_types.h \
+  crypto/ctaes/ctaes.h \
   crypto/sha512.cpp \
   crypto/sha512.h
 
