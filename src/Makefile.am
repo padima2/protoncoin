@@ -310,7 +310,6 @@ crypto_libbitcoin_crypto_a_SOURCES = \
   crypto/sph_sha2.c \
   crypto/sph_sha512.c \
   crypto/ctaes/ctaes.c \
-  crypto/md_helper.c \
   crypto/neoscrypt.h \
   crypto/ripemd160.h \
   crypto/sha1.cpp \
@@ -337,7 +336,8 @@ crypto_libbitcoin_crypto_a_SOURCES = \
   crypto/sph_types.h \
   crypto/ctaes/ctaes.h \
   crypto/sha512.cpp \
-  crypto/sha512.h
+  crypto/sha512.h \
+  crypto/md_helper.c
 
 # common: shared between protond, and proton-qt and non-server tools
 libbitcoin_common_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
